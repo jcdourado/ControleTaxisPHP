@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include '../Util/Helper.php';
   include '../Model/Taxi.class.php';
   include '../Controller/TaxiController.class.php';
@@ -29,10 +30,7 @@
     }
 
     $taxiControler->adicionar($taxi);
-
   }
-
-
 
   $editar = false;
 
@@ -48,15 +46,14 @@
   <body>
 
     <?php
-
-
-
         include 'TaxisForm.php';
 
         if(!$editar){
           include 'TaxisTable.php';
         }
-
      ?>
+
+     <script src="../Controller/ajax.js">
+     </script>
   </body>
 </html>

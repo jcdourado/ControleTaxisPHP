@@ -4,14 +4,19 @@
 
   class TaxiController{
 
+    private $dao;
+
+    public function __construct(){
+      $this->dao = new TaxiDAO;
+    }
+
 
     public function adicionar(Taxi $taxi){
-      $dao = new TaxiDAO;
+      return ($this->dao->adicionar($taxi));
+    }
 
-      return ($dao->adicionar($taxi));
+    public function consultar($nome){
+      return ($this->dao->consultar($nome));
     }
   }
-
-
-
  ?>

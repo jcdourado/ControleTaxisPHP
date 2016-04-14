@@ -1,4 +1,4 @@
-<table>
+<table id="tabelaResultado">
   <tr>
     <th>Nome</th>
     <th>Placa</th>

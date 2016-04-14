@@ -1,6 +1,6 @@
 <form class="" method="post">
   <label>Nome:</label>
-  <input type="text" name="nome" maxlength="30" required>
+  <input id="campoNome"type="text" name="nome" maxlength="30" required>
 
   <label>Placa:</label>
   <input type="text" name="placa" maxlength="8" required>
