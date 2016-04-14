@@ -1,8 +1,6 @@
 <?php
   include 'ResourceManager.class.php';
 
-  include '../Model/Taxi.class.php';
-
   class TaxiDAO{
     private $conexao;
 
