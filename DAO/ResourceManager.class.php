@@ -9,6 +9,7 @@
 
     private function ResourceManager(){
       $this->conexao = new PDO("mysql:host=".self::$server .";dbname=".self::$banco, self::$user, self::$senha);
+      $this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     public function getConnection(){
