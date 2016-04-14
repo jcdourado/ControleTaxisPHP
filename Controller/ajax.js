@@ -1,19 +1,20 @@
 var campoNome = document.getElementById('campoNome');
 var table = document.getElementById('tabelaResultado');
-campoNome.addEventListener('keyup',
-  function (){
-    var nomeBuscar = campoNome.value
+campoNome.addEventListener('keyup',buscar);
+campoNome.addEventListener('change',buscar);
 
-    var toURL = encodeURI(nomeBuscar);
 
-    var ajax = new XMLHttpRequest();
+function buscar(){
+  var nomeBuscar = campoNome.value
 
-    ajax.onreadystatechange = function(){
-      table.innerHTML = ajax.responseText;
-    }
+  var toURL = encodeURI(nomeBuscar);
 
-    ajax.open("get","../Controller/ajax.php?nomeBuscar="+toURL,true);
-    ajax.send();
+  var ajax = new XMLHttpRequest();
 
+  ajax.onreadystatechange = function(){
+    table.innerHTML = ajax.responseText;
   }
-);
+
+  ajax.open("get","../Controller/ajax.php?nomeBuscar="+toURL,true);
+  ajax.send();
+}
