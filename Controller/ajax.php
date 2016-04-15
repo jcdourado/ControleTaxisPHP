@@ -5,14 +5,7 @@
   if(isset($_GET['nomeBuscar'])){
     $controller = new TaxiController;
     $taxis = $controller->consultar($_GET['nomeBuscar']);
-    $retorn = "<table>
-              <tr>
-                <th>Nome</th>
-                <th>Placa</th>
-                <th>Estado</th>
-                <th>Cidade</th>
-                <th>Bairro</th>
-              </tr>";
+    $retorn = "<tbody>";
     foreach ($taxis as $taxi) {
       $retorn .= "<tr>
           <td>{$taxi['NOME']}</td>
@@ -23,7 +16,7 @@
           <td>{$taxi['BAIRRO']}</td>
         </tr>";
       }
-      $retorn.="</table>";
+      $retorn.="</tbody>";
     echo $retorn;
   }
 
