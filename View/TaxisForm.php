@@ -1,9 +1,11 @@
 <form class="" method="post">
   <label>Nome:</label>
-  <input id="campoNome"type="text" name="nome" maxlength="30" value="<?php echo @$taxi['NOME']; ?>" required>
+  <input id="campoNome"type="text" name="nome" maxlength="30" value="<?php echo @$taxi['NOME']; ?>" >
+  <?php if(@$erros['NOME']) echo "<span>{$erros['NOME']}</span>"; ?>
 
   <label>Placa:</label>
-  <input type="text" name="placa" maxlength="8" value="<?php echo @$taxi['PLACA']; ?>" required>
+  <input type="text" name="placa" maxlength="8" value="<?php echo @$taxi['PLACA']; ?>" >
+  <?php if(@$erros['PLACA']) echo "<span>{$erros['PLACA']}</span>"; ?>
 
   <label>Estado:</label>
   <select class="" name="estado">
