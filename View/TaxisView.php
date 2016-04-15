@@ -1,5 +1,4 @@
 <?php
-  session_start();
   include '../Util/Helper.php';
   include '../Model/Taxi.class.php';
   include '../Controller/TaxiController.class.php';
@@ -34,7 +33,7 @@
 
   $editar = false;
 
-  $taxis = array();
+  $taxis = $taxiControler->consultar('');
  ?>
 
 <!DOCTYPE html>
