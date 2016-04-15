@@ -48,6 +48,22 @@
       $statement->bindParam(1, $id);
       return ($statement->execute());
     }
+
+    public function duplicar($id){
+      $sql = "SELECT * FROM TAXIS WHERE ID = ".$id;
+      $statement = $this->conexao->prepare($sql);
+      $statement->execute();
+      $taxi = $statement->fetch(PDO::FETCH_ASSOC);
+
+      $sql = "INSERT INTO TAXIS(NOME, PLACA, BAIRRO, CIDADE, ESTADO) VALUES (?, ?, ?, ?, ?)";
+      $statement = $this->conexao->prepare($sql);
+      $statement->bindParam(1, $taxi['NOME']);
+      $statement->bindParam(2, $taxi['PLACA']);
+      $statement->bindParam(3, $taxi['BAIRRO']);
+      $statement->bindParam(4, $taxi['CIDADE']);
+      $statement->bindParam(5, $taxi['ESTADO']);
+      $statement->execute();
+    }
   }
 
 ?>

@@ -22,11 +22,22 @@
     public function excluir($id){
       return ($this->dao->excluir($id));
     }
+
+    public function duplicar($id){
+      $this->dao->duplicar($id);
+    }
   }
 
   if(isset($_GET['excluir'])){
     $controller = new TaxiController;
     $controller->excluir($_GET['excluir']);
+    header('Location: ../View/TaxisView.php');
+    die();
+  }
+
+  if(isset($_GET['duplicar'])){
+    $controller = new TaxiController;
+    $controller->duplicar($_GET['duplicar']);
     header('Location: ../View/TaxisView.php');
     die();
   }

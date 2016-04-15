@@ -34,6 +34,7 @@
   $editar = false;
 
   $taxis = $taxiControler->consultar('');
+  
  ?>
 
 <!DOCTYPE html>
@@ -47,7 +48,7 @@
         include 'TaxisForm.php';
 
         if(!$editar){
-          include 'TaxisTable.php';
+          include "TaxisTable.php";
         }
      ?>
 

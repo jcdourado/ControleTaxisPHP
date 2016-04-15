@@ -3,7 +3,6 @@ var table = document.getElementById('tabelaResultado');
 var btnExibirTodos = document.getElementById('btnExibir');
 
 campoNome.addEventListener('keyup',verificaQtd);
-campoNome.addEventListener('change',verificaQtd);
 campoNome.addEventListener('paste',verificaQtd);
 
 btnExibirTodos.addEventListener('click',function (){

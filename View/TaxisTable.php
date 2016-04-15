@@ -9,7 +9,6 @@
     <th>Opções</th>
   <thead>
   <tbody id="tabelaResultado">
-    <?php echo print_r($taxis); ?>
     <?php foreach ($taxis as $taxi ): ?>
       <tr>
         <td><?php echo $taxi['NOME']; ?></td>
@@ -17,7 +16,9 @@
         <td><?php echo estado_view($taxi['ESTADO']); ?></td>
         <td><?php echo $taxi['CIDADE']; ?></td>
         <td><?php echo $taxi['BAIRRO']; ?></td>
-        <td><?php echo "<a href='../Controller/TaxiController.class.php?excluir={$taxi['ID']}' ?> Excluir</a>"; ?></td>
+        <td><?php echo "<a href='TaxiEditar.php?editar={$taxi['ID']}' ?> Editar</a>"; ?>
+        <?php echo "<a href='../Controller/TaxiController.class.php?duplicar={$taxi['ID']}' ?> Duplicar</a>"; ?>
+        <?php echo "<a href='../Controller/TaxiController.class.php?excluir={$taxi['ID']}' ?> Excluir</a>"; ?></td>
       </tr>
     <?php endforeach; ?>
   </tbody>
