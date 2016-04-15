@@ -54,9 +54,14 @@
     <head>
       <meta charset="utf-8">
       <title>Editar Taxi</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
     </head>
     <body>
+      <div class="container">
+
       <?php
-       include 'TaxisForm.php'; ?>
+       include 'TaxiFormEdit.php'; ?>
+     </div>
     </body>
   </html>

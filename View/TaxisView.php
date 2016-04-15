@@ -29,6 +29,12 @@
     }
 
     $taxiControler->adicionar($taxi);
+
+    $taxi->nome='';
+    $taxi->placa='';
+    $taxi->estado='no';
+    $taxi->cidade='';
+    $taxi->bairro='';
   }
 
   $taxis = $taxiControler->consultar('');
@@ -40,16 +46,21 @@
   <head>
     <meta charset="utf-8">
     <title>Taxis</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
   </head>
   <body>
+    <div class="container">
+      
     <?php
+
         include 'TaxisForm.php';
 
         include "TaxisTable.php";
 
      ?>
+    </div>
 
-     <script src="../Controller/ajax.js">
+    <script src="../Controller/ajax.js">
      </script>
   </body>
 </html>
