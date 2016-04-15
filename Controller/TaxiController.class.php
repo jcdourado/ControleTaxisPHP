@@ -26,6 +26,15 @@
     public function duplicar($id){
       $this->dao->duplicar($id);
     }
+
+    public function buscarRegistro($id){
+      return $this->dao->buscarRegistro($id);
+    }
+
+    public function editar($taxi,$id){
+      print_r($taxi);
+      $this->dao->editar($taxi,$id);
+    }
   }
 
   if(isset($_GET['excluir'])){

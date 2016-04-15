@@ -31,10 +31,8 @@
     $taxiControler->adicionar($taxi);
   }
 
-  $editar = false;
-
   $taxis = $taxiControler->consultar('');
-  
+
  ?>
 
 <!DOCTYPE html>
@@ -47,9 +45,8 @@
     <?php
         include 'TaxisForm.php';
 
-        if(!$editar){
-          include "TaxisTable.php";
-        }
+        include "TaxisTable.php";
+
      ?>
 
      <script src="../Controller/ajax.js">

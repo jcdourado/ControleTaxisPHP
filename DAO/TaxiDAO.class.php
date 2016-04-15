@@ -64,6 +64,27 @@
       $statement->bindParam(5, $taxi['ESTADO']);
       $statement->execute();
     }
+
+    public function buscarRegistro($id){
+      $sql = "SELECT * FROM TAXIS WHERE ID = ".$id;
+      $statement = $this->conexao->prepare($sql);
+      $statement->execute();
+      $taxi = $statement->fetch(PDO::FETCH_ASSOC);
+      return $taxi;
+    }
+
+    public function editar($taxi,$id){
+      $sql = "UPDATE TAXIS SET NOME = ? ,PLACA = ?, BAIRRO = ?, CIDADE = ?, ESTADO = ? WHERE ID = ?";
+      $statement = $this->conexao->prepare($sql);
+      $statement->bindParam(1, $taxi['NOME']);
+      $statement->bindParam(2, $taxi['PLACA']);
+      $statement->bindParam(3, $taxi['BAIRRO']);
+      $statement->bindParam(4, $taxi['CIDADE']);
+      $statement->bindParam(5, $taxi['ESTADO']);
+      $statement->bindParam(6, $id);
+      $statement->execute();
+
+    }
   }
 
 ?>
