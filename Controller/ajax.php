@@ -14,6 +14,7 @@
       $retorn.= estado_view($taxi['ESTADO'])."</td>
           <td>{$taxi['CIDADE']}</td>
           <td>{$taxi['BAIRRO']}</td>
+          <td><a href='../Controller/TaxiController.class.php?excluir='{$taxi['ID']}>Excluir</a></td>
         </tr>";
       }
       $retorn.="</tbody>";
