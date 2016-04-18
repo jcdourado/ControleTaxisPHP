@@ -14,9 +14,9 @@
       $retorn.= estado_view($taxi['ESTADO'])."</td>
           <td>{$taxi['CIDADE']}</td>
           <td>{$taxi['BAIRRO']}</td>
-          <td><a href='TaxiEditar.php?editar={$taxi['ID']}' ?> Editar</a>
-          <a href='../Controller/TaxiController.class.php?duplicar={$taxi['ID']}' ?> Duplicar</a>
-          <a href='../Controller/TaxiController.class.php?excluir={$taxi['ID']}'>Excluir</a>
+          <td><a class='btn btn-info' href='TaxiEditar.php?editar={$taxi['ID']}' ?> Editar</a>
+          <a class='btn btn-info' href='../Controller/TaxiController.class.php?duplicar={$taxi['ID']}' ?> Duplicar</a>
+          <a class='btn btn-info' href='../Controller/TaxiController.class.php?excluir={$taxi['ID']}'>Excluir</a>
           </td>
         </tr>";
       }
